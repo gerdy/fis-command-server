@@ -1,4 +1,4 @@
-# fis-command-server
+# tch-command-server
 
 ## Usage
 
