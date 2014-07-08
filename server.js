@@ -48,7 +48,7 @@ exports.register = function(commander) {
     }
   
     commander
-        .option('-p, --port <int>', 'server listen port', parseInt, process.env.FIS_SERVER_PORT || 8080)
+        .option('-p, --port <int>', 'server listen port', parseInt, process.env.FIS_SERVER_PORT || fis.config.get('server.port',8080))
         .option('--root <path>', 'document root', getRoot(fis.config.get('server.root','./output')))
         .option('--type <php|java|node>', 'process language', String,process.env.FIS_SERVER_TYPE||'node')
         .option('--rewrite [script]', 'enable rewrite mode', String, fis.config.get('server.rewrite', false))

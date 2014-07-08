@@ -1,7 +1,7 @@
 {
   "name": "tch-command-server",
   "description": "tch server command.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": {
     "name": "gerdy"
   },
@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/gerdy/fis-command-server/issues"
   },
-  "_id": "tch-command-server@0.0.2",
-  "_shasum": "795ad2fcb1cdfedd5e41941c8147776b9aa0d195",
-  "_from": "tch-command-server@^0.0.2"
+  "_id": "tch-command-server@0.0.3",
+  "_shasum": "1fc96fca58a443083da36984cde1bdc105d10c06",
+  "_from": "tch-command-server@^0.0.3"
 }
