@@ -1,19 +1,33 @@
 {
-    "name" : "tch-command-server",
-    "description" : "tch server command.",
-    "version" : "0.0.1",
-    "author" : "gerdy",
-    "homepage" : "http://fis.baidu.com/",
-    "keywords": [ "tch" ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/gerdy/fis-command-server.git"
-    },
-    "engines" : {
-        "node" : ">= 0.8.0"
-    },
-    "main" : "server.js",
-    "scripts" : {
-        "test" : "mocha test/ut --recursive"
-    }
+  "name": "tch-command-server",
+  "description": "tch server command.",
+  "version": "0.0.2",
+  "author": {
+    "name": "gerdy"
+  },
+  "homepage": "http://fis.baidu.com/",
+  "keywords": [
+    "tch"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gerdy/fis-command-server.git"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha test/ut --recursive",
+    "start": "node server.js"
+  },
+  "readme": "# tch-command-server\n\n## Usage\n\n      Usage: server <command> [options]\n\n      Commands:\n\n        start                  start server\n        stop                   shutdown server\n        restart                restart server\n        info                   output server info\n        open                   open document root directory\n        clean                  clean files in document root\n        install <name>         install server framework\n\n      Options:\n\n        -h, --help                     output usage information\n        -p, --port <int>               server listen port\n        --root <path>                  document root\n        --type <php|java|node>         process language\n        --rewrite [script]             enable rewrite mode\n        --repos <url>                  install repository\n        --timeout <seconds>            start timeout\n        --php_exec <path>              path to php-cgi executable file\n        --php_exec_args <args>         php-cgi arguments\n        --php_fcgi_children <int>      the number of php-cgi processes\n        --php_fcgi_max_requests <int>  the max number of requests\n        --include <glob>               clean include filter\n        --exclude <glob>               clean exclude filter",
+  "readmeFilename": "README.md",
+  "gitHead": "1168f53f8c26a1ad38a9c7f14d287f3ecc20df6f",
+  "bugs": {
+    "url": "https://github.com/gerdy/fis-command-server/issues"
+  },
+  "_id": "tch-command-server@0.0.2",
+  "_shasum": "795ad2fcb1cdfedd5e41941c8147776b9aa0d195",
+  "_from": "tch-command-server@^0.0.2"
 }

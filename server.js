@@ -19,6 +19,7 @@ exports.register = function(commander) {
         } else {
             fis.util.mkdir(root);
         }
+        fis.project.setProjectRoot(root);
         return fis.util.realpath(root);
     }
 
@@ -45,23 +46,10 @@ exports.register = function(commander) {
         }
         return new RegExp('^'+ prefix + '(' + group.join('|') + ')$', 'i');
     }
-
-    var serverRoot = (function(){
-        var key = 'FIS_SERVER_DOCUMENT_ROOT';
-        if(process.env && process.env[key]){
-            var path = process.env[key];
-            if(fis.util.exists(path) && !fis.util.isDir(path)){
-                fis.log.error('invalid environment variable [' + key + '] of document root [' + path + ']');
-            }
-            return path;
-        } else {
-            return fis.project.getTempPath('www');
-        }
-    })();
-    
+  
     commander
         .option('-p, --port <int>', 'server listen port', parseInt, process.env.FIS_SERVER_PORT || 8080)
-        .option('--root <path>', 'document root', getRoot, serverRoot)
+        .option('--root <path>', 'document root', getRoot(fis.config.get('server.root','./output')))
         .option('--type <php|java|node>', 'process language', String,process.env.FIS_SERVER_TYPE||'node')
         .option('--rewrite [script]', 'enable rewrite mode', String, fis.config.get('server.rewrite', false))
         .option('--repos <url>', 'install repository', String, process.env.FIS_SERVER_REPOSITORY)
