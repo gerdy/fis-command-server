@@ -9,7 +9,7 @@ var server = require('./lib/server.js');
 
 exports.name = 'server';
 exports.usage = '<command> [options]';
-exports.desc = 'launch a php-cgi server';
+exports.desc = '启动一个nodejs的服务器';
 exports.register = function(commander) {
     function getRoot(root){
         if(fis.util.exists(root)){
@@ -71,7 +71,6 @@ exports.register = function(commander) {
                     options.rewrite = true;
                 }
             }
-
             if(root){
                 if(fis.util.exists(root) && !fis.util.isDir(root)){
                     fis.log.error('invalid document root [' + root + ']');
@@ -191,3 +190,13 @@ exports.register = function(commander) {
             .description('initialize server framework');
     }
 };
+exports.command = function(){
+    return {
+        "open":{
+            "dest": "打开服务器"
+        },
+        "clean":{
+            "dest":"清除服务器配置"
+        }
+    }
+}
